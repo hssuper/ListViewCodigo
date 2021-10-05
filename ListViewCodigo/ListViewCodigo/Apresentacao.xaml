@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListViewCodigo.Apresentacao"
+             Title="{Binding nome}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="{Binding imagem}" HeightRequest="150"
+                   HorizontalOptions="Center" VerticalOptions="Start"/>
+                <Label Text="{Binding nome}"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontAttributes="Bold"
+                   FontSize="Title"/>
+                <Label Text="{Binding descricao}"
+                          FontSize="Body"
+                          TextColor="Red" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Técnico:" />
+                    <Label Text="{Binding tecnico}" FontSize="12"
+                           TextColor="BlueViolet"/>
+                </StackLayout>
+                <StackLayout >
+                    <Label Text="Jogadores:" />
+                    <ListView ItemsSource="{Binding jogador}" 
+                              x:Name="lstJogador"/>
+                </StackLayout>
+                <Button Text="Voltar" Clicked="btVoltar"
+                    BackgroundColor="White"
+BorderColor="Black"
+                    BorderWidth="2"
+                    CornerRadius="8"
+                    FontAttributes="Bold"
+FontSize="18"
+                    />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
